@@ -20,9 +20,6 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
 
-    <!-- Google Icons (Material Design)-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
     <!-------------------------------------------------------->
@@ -36,9 +33,15 @@
     <!-------------------------------------------->
     <!-- Other libraries and styles of your own -->
     <!-------------------------------------------->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="./styles/style.css"> -->
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        #pageImage{
+            float: right;
+            height: auto;
+            width:auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,10 +54,17 @@
 
     <!-- the body of your page goes here -->
     <div class="container">
+        <img id="pageImage" src="/images/bookmyroom.jpg" >
+        <div class="indexHeading">
         <h1>Welcome to BookMyRoom.com</h1>
-        <a href="login.html" class="btn btn-info" role="button">Log in</a>
+        <a id="indexBody" href="login.html" class="btn btn-info" role="button">Log in</a>
+        </div>
     </div>
 
+    <div>
+        <h3 id="indexContent1">You are at THE BEST place to book your stay..<br></h3>
+        <h3 id="indexContent2">Your Comfort is our Motto :) </h3>
+    </div>
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>BookMyRoom.com</title>
     <meta name="comp1800 template" content="My 1800 App">
@@ -22,7 +23,7 @@
 
     <!-- Google Icons (Material Design)-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <!-------------------------------------------------------->
     <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
     <!-------------------------------------------------------->
@@ -32,7 +33,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
+
 <body>
     <!------------------------------>
     <!-- Your HTML Layout go here -->
@@ -44,12 +47,27 @@
     <!-- the body of your page goes here -->
     <div class="container-fluid bg-light text-dark p-5">
         <div class="container bg-light p-5">
-            <h1 class="display-4">Good morning Dear customer</h1>
+
+            <h4 class="display-4">Good morning, <br>
+                &nbsp;&nbsp;&nbsp; Dear Customer
+                <!--<span id="name-goes-here">-->
+            </h4>
             <hr>
-            <p>Quote of the day: <br>
-                “When everything feels like an uphill struggle, think about the view from the top.”</p>
+            <h3> Quote of the day: House and love make a home.<br>
+                <!-- <span id="quote-goes-here">...</span> -->
+            </h3>
+            <hr>
         </div>
     </div>
+
+    <h3 id="ChooseText">To begin with, Let us know your plan:</h3>
+
+    <div class="buttons">
+        <a class="btn btn-primary btn-lg" href="/createPost.html">Create a Post</a>
+        <a class="btn btn-secondary btn-lg" href="/browsePosts.html">Browse Posts</a>
+    </div>
+
+    <img id="chooseImg" src="/images/bookmyroom.jpg" width="300px" >
 
     <!-- our own footer goes here-->
     <nav id="footerPlaceholder"></nav>
@@ -60,8 +78,8 @@
     <script src="./scripts/firebaseAPI_BBY17.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/main.js"></script>
 
 </body>
+
 </html>
-
-

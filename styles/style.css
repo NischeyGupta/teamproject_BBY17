@@ -27,3 +27,9 @@
     margin-left: 28%;
     margin-bottom: 15%;
 }
+
+#pageImage{
+    float: right;
+    height: auto;
+    width:auto;
+}

@@ -33,3 +33,21 @@
     height: auto;
     width:auto;
 }
+
+/* #loginPageImage{
+    margin-top: 1%;
+    float: right;
+    width: 40%;
+    margin-right: 5%;
+} */
+
+#loginPageHeading{
+    margin-top: 1%;
+}
+
+#loginText{
+    margin-top: 10%;
+}
+#loginBody{
+    margin-bottom: 10%;
+}

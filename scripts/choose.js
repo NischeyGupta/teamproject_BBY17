@@ -30,33 +30,3 @@ function insertName() {
     })
 }
 insertName()
-
-function writeAccommodations() {
-    //define a variable for the collection you want to create in Firestore to populate data
-    var accommodationRef = db.collection("accommodations");
-
-    accommodationRef.add({
-        code: "ACCOM01",
-        name: "ABC Accommodation",
-        address: "#01, #1 Street",
-        city: "Burnaby",
-        province: "BC",
-        details: "1BHK, No Balcony, Food Service Available "
-    });
-    accommodationRef.add({
-        code: "ACCOM02",
-        name: "DEF Accommodation",
-        address: "#02, #2 Street",
-        city: "Anmore",
-        province: "BC",
-        details: "2 BHK with attached bathrooms, Sea Facing rooms"
-    });
-    accommodationRef.add({
-        code: "ACCOM03",
-        name: "GHI Accommodation",
-        address: "#03, #3 Street",
-        city: "North Vancouver",
-        province: "BC",
-        details: "3 BHK with attached Balconies, a beautiful garden area included"
-    });
-}

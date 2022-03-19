@@ -11,7 +11,7 @@ var uiConfig = {
       if (authResult.additionalUserInfo.isNewUser) {
         //create a collection with name "users"
         db.collection("users")
-        //define a document for a user with uID as document ID
+          //define a document for a user with uID as document ID
           .doc(user.uid).set({
             name: user.displayName,
             email: user.email

@@ -5,7 +5,7 @@ function read_display_Quote() {
     db.collection("quotes").doc("tuesday") //name of the collection and documents should matach excatly with what you have in Firestore
         .onSnapshot(function (tuesdayDoc) {
             console.log(tuesdayDoc.data()); //.data() returns data object
-            document.getElementById("quote-goes-here").innerHTML = tuesdayDoc.data().quote; //using javascript to display the data on the right place
+            document.getElementById("quote-goes-here").innerHTML = tuesdayDoc.data().quotes; //using javascript to display the data on the right place
         })
 }
 //calling the function
@@ -26,7 +26,6 @@ function insertName() {
                 // $("name-goes-here").text(user_Name);  // jquery way
             })
         }
-
     })
 }
 insertName()

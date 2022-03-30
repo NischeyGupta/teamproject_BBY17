@@ -1,7 +1,8 @@
-var currentUser //put this right after you start script tag before writing any functions.
+var currentUser
 
 function populateInfo() {
     firebase.auth().onAuthStateChanged(user => {
+
         // Check if user is signed in:
         if (user) {
 
@@ -10,6 +11,7 @@ function populateInfo() {
             //get the document for current user.
             currentUser.get()
                 .then(userDoc => {
+
                     //get the data fields of the user
                     var userName = userDoc.data().name;
                     var userContactNum = userDoc.data().contactnum;
@@ -22,10 +24,7 @@ function populateInfo() {
                         document.getElementById("nameInput").value = userName;
                     }
                     if (userContactNum != null) {
-                        document.getElementById("contactnumInput").value = userContactNum;
-                    }
-                    if (userContactNum != null) {
-                        document.getElementById("contactnumInput").value = userContactNum;
+                        document.getElementById("contactNumInput").value = userContactNum;
                     }
                     if (userEmail != null) {
                         document.getElementById("emailInput").value = userEmail;
@@ -56,14 +55,14 @@ editUserInfo();
 
 function saveUserInfo() {
     userName = document.getElementById('nameInput').value; //get the value of the field with id="nameInput"
-    // userContactNum = document.getElementById('contactnumInput').value; //get the value of the field with id="contactnumInput"
+    userContactNum = document.getElementById('contactNumInput').value; //get the value of the field with id="contactnumInput"
     userEmail = document.getElementById('emailInput').value; //get the value of the field with id="emailInput"
     userCity = document.getElementById('cityInput').value; //get the value of the field with id="cityInput"
     userCountry = document.getElementById('countryInput').value; //get the value of the field with id="countryInput"
 
     currentUser.update({
             name: userName,
-            // contactno: userContactNum,
+            contactnum: userContactNum,
             email: userEmail,
             city: userCity,
             country: userCountry,

@@ -86,9 +86,9 @@ firebase.auth().onAuthStateChanged(user => {
         console.log(currentUser);
 
         // the following functions are always called when someone is logged in
-        read_display_Quote();
-        insertName();
-        populateCardsDynamically();
+        // read_display_Quote();
+        // insertName();
+        // populateCardsDynamically();
     } else {
         // No user is signed in.
         console.log("No user is signed in");

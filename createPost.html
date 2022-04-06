@@ -29,6 +29,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <!-------------------------------------------->
@@ -84,10 +85,17 @@
                     <input type="text" id="provinceInput" class="form-control" placeholder="Enter the province">
                 </div>
 
+                <div class="container-fluid bg-dark text-light p-3">
+                    <div class="container py-3">
+                        <input type="file" id="mypic-input" accept="image/*" />
+                        <img id="mypic-goes-here" src="..." width=50 height=50 />
+                    </div>
+                </div>
 
             </fieldset>
+
             <div class="d-flex justify-content-end mt-5">
-                <button type="button" class="btn btn-secondary" onclick="editAccommodationInfo()">Edit</button>
+                <button type="button" class="btn btn-secondary" id="save" onclick="editAccommodationInfo()">Edit</button>
                 <!-- onclick="editAccommodationInfo()"   //event-listener that call the function editAccommodationInfo after clicking on the button. -->
                 <span style="width: 10px"></span>
                 <button type="button" class="btn btn-info" onclick="saveAccommodationInfo()">Save</button>
@@ -107,6 +115,8 @@
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/script.js"></script>
     <script src="./scripts/createPost.js"></script>
+    <script src="./scripts/browsePosts.js"></script>
+    <script src="./scripts/eachAccommodation.js"></script>
 
 </body>
 

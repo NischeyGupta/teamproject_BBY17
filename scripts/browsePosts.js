@@ -53,7 +53,7 @@ function displayCards(collection) {
                 newcard.querySelector('.card-title').innerHTML = title;
                 newcard.querySelector('.card-text').innerHTML = details;
                 // newcard.querySelector('.card-text').innerHTML = province;
-                // newcard.querySelector('a').onclick = () => setAccommodationsData(code);
+                newcard.querySelector('a').onclick = () => setAccommodationsData(code);
 
                 //this line sets the id attribute for the <i> tag in the format of "save-code" 
                 //so later we know which hike to bookmark based on which hike was clicked
@@ -67,6 +67,8 @@ function displayCards(collection) {
                 // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
                 // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
                 // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
+
+                newcard.querySelector('.read-more').href = "eachAccommodation.html?title="+title +"&details=" + details;
 
                 //attach to gallery
                 document.getElementById(collection + "-go-here").appendChild(newcard);

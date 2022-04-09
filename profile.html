@@ -54,34 +54,46 @@
     <div class="container">
         <h1>User Profile </h1>
         <form>
+
             <fieldset class="mb-3" id="personalInfoFields" disabled>
+
                 <div class="form-group">
                     <label><b>Name</b></label>
                     <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
                 </div>
+
                 <div class="form-group">
                     <label><b>Contact No.</b></label>
                     <input type="tel" id="contactNumInput" class="form-control" placeholder="Enter your contact number">
                 </div>
+
                 <div class="form-group">
                     <label><b>Email</b></label>
                     <input type="email" id="emailInput" class="form-control" placeholder="Enter your email">
                 </div>
+
                 <div class="form-group">
                     <label><b>City</b></label>
                     <input type="text" id="cityInput" class="form-control" placeholder="Enter your city">
                 </div>
+
                 <div class="form-group">
                     <label><b>Country</b></label>
                     <input type="text" id="countryInput" class="form-control" placeholder="Enter your country">
                 </div>
+
             </fieldset>
+
             <div class="d-flex justify-content-end mt-5">
+
                 <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
                 <!-- onclick="editUserInfo()"   //event-listener that call the function editUserInfo after clicking on the button. -->
+
                 <span style="width: 10px"></span>
+
                 <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
                 <!-- onclick="saveUserInfo()"   //event-listener that calls the function saveUserInfo after clicking on the button. -->
+
             </div>
         </form>
     </div>

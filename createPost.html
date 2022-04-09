@@ -53,33 +53,43 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
     <div class="container">
+
         <h1>Create a post</h1>
         <h3>Please provide details of the accommodation</h3>
+
         <form>
+
             <fieldset class="mb-3" id="accommodationInfoFields" disabled>
+
                 <div class="form-group">
                     <label><b>Name</b></label>
                     <input type="text" id="nameInput" class="form-control"
                         placeholder="Enter a name for your accommodation">
                 </div>
+
                 <div class="form-group">
                     <label><b>Code (to refer later)</b></label>
                     <input type="text" id="codeInput" class="form-control"
                         placeholder="Enter a unique code for your accommodation">
                 </div>
+
                 <div class="form-group">
                     <label><b>Details</b></label>
                     <input type="text" id="detailsInput" class="form-control"
                         placeholder="Enter details of the accommodation">
                 </div>
+
                 <div class="form-group">
                     <label><b>Nearest Olympic Venue and distance</b></label>
-                    <input type="text" id="addressInput" class="form-control" placeholder="Enter venue and distance in miles">
+                    <input type="text" id="addressInput" class="form-control"
+                        placeholder="Enter venue and distance in miles">
                 </div>
+
                 <div class="form-group">
                     <label><b>City</b></label>
                     <input type="text" id="cityInput" class="form-control" placeholder="Enter the city">
                 </div>
+
                 <div class="form-group">
                     <label><b>Province</b></label>
                     <input type="text" id="provinceInput" class="form-control" placeholder="Enter the province">
@@ -90,16 +100,22 @@
                         <input type="file" id="mypic-input" accept="image/*" />
                         <!-- <img id="mypic-goes-here" src="..." width=50 height=50 /> -->
                     </div>
+
                 </div>
 
             </fieldset>
 
             <div class="d-flex justify-content-end mt-5">
-                <button type="button" class="btn btn-secondary" id="save" onclick="editAccommodationInfo()">Edit</button>
+
+                <button type="button" class="btn btn-secondary" id="save"
+                    onclick="editAccommodationInfo()">Edit</button>
                 <!-- onclick="editAccommodationInfo()"   //event-listener that call the function editAccommodationInfo after clicking on the button. -->
+
                 <span style="width: 10px"></span>
+
                 <button type="button" class="btn btn-info" onclick="saveAccommodationInfo()">Save</button>
                 <!-- onclick="saveAccommodationInfo()"   //event-listener that calls the function saveAccommodationInfo after clicking on the button. -->
+
             </div>
         </form>
     </div>

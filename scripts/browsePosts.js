@@ -10,6 +10,7 @@ function writeAccommodations() {
         province: "BC",
         details: "1BHK, No Balcony, Food Service Available "
     });
+
     accommodationRef.add({
         code: "ACCOM01",
         name: "DEF Accommodation",
@@ -18,6 +19,7 @@ function writeAccommodations() {
         province: "BC",
         details: "2 BHK with attached bathrooms, Sea Facing rooms"
     });
+
     accommodationRef.add({
         code: "ACCOM03",
         name: "GHI Accommodation",
@@ -26,6 +28,7 @@ function writeAccommodations() {
         province: "BC",
         details: "3 BHK with attached Balconies, a beautiful garden area included"
     });
+
     accommodationRef.add({
         code: "ACCOM04",
         name: "JKL Accommodation",
@@ -41,6 +44,7 @@ function displayCards(collection) {
 
     db.collection("accommodations").get()
         .then(snap => {
+
             var i = 1;
             snap.forEach(doc => { //iterate thru each doc
                 var title = doc.data().name; // get value of the "name" key
@@ -58,6 +62,7 @@ function displayCards(collection) {
                 //this line sets the id attribute for the <i> tag in the format of "save-code" 
                 //so later we know which hike to bookmark based on which hike was clicked
                 newcard.querySelector('i').id = 'save-' + code;
+
                 // this line will call a function to save the hikes to the user's document
                 newcard.querySelector('i').onclick = () => saveBookmark(code);
 
@@ -81,14 +86,11 @@ displayCards("accommodations");
 
 var currentUser;
 firebase.auth().onAuthStateChanged(user => {
+
     if (user) {
         currentUser = db.collection("users").doc(user.uid); //global
         console.log(currentUser);
 
-        // the following functions are always called when someone is logged in
-        // read_display_Quote();
-        // insertName();
-        // populateCardsDynamically();
     } else {
         // No user is signed in.
         console.log("No user is signed in");
@@ -102,11 +104,13 @@ firebase.auth().onAuthStateChanged(user => {
 // Then it will change the bookmark icon from the hollow to the solid version. 
 //-----------------------------------------------------------------------------
 function saveBookmark(code) {
+
     currentUser.set({
             bookmarks: firebase.firestore.FieldValue.arrayUnion(code)
         }, {
             merge: true
         })
+
         .then(function () {
             console.log("bookmark has been saved for: " + currentUser);
             var iconID = 'save-' + code;

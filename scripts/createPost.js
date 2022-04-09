@@ -1,20 +1,3 @@
-// function writeAccommodations() {
-//     //define a variable for the collection you want to create in Firestore to populate data
-//     var accommodationRef = db.collection("accommodations").add();
-
-//     accommodationRef
-
-//         var accomCode = accommodationsDoc.data().code;
-
-//         // code: "",
-//         // name: "",
-//         // address: "",
-//         // city: "",
-//         // province: "",
-//         // details: ""
-//     });
-// }
-
 function editAccommodationInfo() {
 
     //Enable the form fields
@@ -24,6 +7,7 @@ function editAccommodationInfo() {
 editAccommodationInfo();
 
 function saveAccommodationInfo() {
+
     var accomName = document.getElementById('nameInput').value; //get the value of the field with id="nameInput"
     var accomCode = document.getElementById('codeInput').value; //get the value of the field with id="codeInput"
     var accomDetails = document.getElementById('detailsInput').value; //get the value of the field with id="detailsInput"
@@ -34,6 +18,7 @@ function saveAccommodationInfo() {
 
 
     db.collection("accommodations").add({
+
             name: accomName,
             code: accomCode,
             details: accomDetails,
@@ -41,11 +26,13 @@ function saveAccommodationInfo() {
             city: accomCity,
             province: accomProvince
         })
+
         .then(function (doc) {
             console.log(doc.id); //prints id of the newly added doc
-            savePicture(doc.id)  //id of newly created post
+            savePicture(doc.id) //id of newly created post
             console.log("Document successfully added!");
         })
+
     document.getElementById('accommodationInfoFields').disabled = true;
 }
 
@@ -53,12 +40,15 @@ function saveAccommodationInfo() {
 // This event listener waits for user to upload a image
 //-----------------------------------------------------
 var theFile; //global variable pointing to the locally picked file object
+
 function addImagePicker() {
+
     const image = document.getElementById("mypic-goes-here"); // pointer 
     fileChoice.addEventListener('change', function (e) { //event listener
         theFile = e.target.files[0];
         var blob = URL.createObjectURL(theFile);
         image.src = blob; //show this DOM image for now
+
     })
 }
 
@@ -76,17 +66,22 @@ function savePicture(postid) {
 
     //upload the picked file with .put()
     storageRef.put(theFile) //global pointer to the picked file
+
         .then(function (snap) {
+
             //the file has successfully been put into storage
             console.log('Uploaded to Cloud Storage.');
+
             //get the URL of stored file with .getDownloadURL()
             storageRef.getDownloadURL()
+
                 .then(function (url) { // Get URL of the uploaded file
                     console.log(url); // Save the URL into users collection
                     console.log(`File URL: ${url}`);
                     db.collection("accommodations").doc(postid).update({
                             "image": url
                         })
+
                         .then(function () {
                             console.log('Added post picture to Firestore.');
                             //window.location.href="main.html";
@@ -99,7 +94,9 @@ function showDatabasePicture() {
     db.collection("accommodations")
         .get()
         .then(function (snap) {
+
             snap.forEach(function (doc) {
+
                 var pictureURL = doc.data().image; //url is ready to use
                 console.log(pictureURL);
                 if (pictureURL) { //ie, not undefined or null

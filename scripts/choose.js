@@ -13,9 +13,12 @@ read_display_Quote();
 
 function insertName() {
     console.log("hey inside the insertName");
+
     // to check if the user is logged in
     firebase.auth().onAuthStateChanged(user => { //arrow notation
+
         if (user) {
+
             console.log(user.uid); //let me to know who is the user that logged in to get the uid
             currentUser = db.collection("users").doc(user.uid); //this line will go to the firestore and go to the document of the user
             currentUser.get().then(userDoc => {
@@ -28,4 +31,5 @@ function insertName() {
         }
     })
 }
+
 insertName()

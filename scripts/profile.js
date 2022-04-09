@@ -23,23 +23,30 @@ function populateInfo() {
                     if (userName != null) {
                         document.getElementById("nameInput").value = userName;
                     }
+
                     if (userContactNum != null) {
                         document.getElementById("contactNumInput").value = userContactNum;
+
                     }
                     if (userEmail != null) {
                         document.getElementById("emailInput").value = userEmail;
+
                     }
                     if (userCity != null) {
                         document.getElementById("cityInput").value = userCity;
+
                     }
                     if (userCountry != null) {
                         document.getElementById("countryInput").value = userCountry;
                     }
                 })
+
         } else {
+
             // No user is signed in.
             console.log("No user is signed in");
         }
+
     });
 }
 
@@ -54,6 +61,7 @@ function editUserInfo() {
 editUserInfo();
 
 function saveUserInfo() {
+
     userName = document.getElementById('nameInput').value; //get the value of the field with id="nameInput"
     userContactNum = document.getElementById('contactNumInput').value; //get the value of the field with id="contactnumInput"
     userEmail = document.getElementById('emailInput').value; //get the value of the field with id="emailInput"

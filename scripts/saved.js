@@ -7,20 +7,25 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 function getBookmarks(user) {
+
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {
+
             var bookmarks = userDoc.data().bookmarks;
             console.log(bookmarks);
 
             let accommodationCardTemplate = document.getElementById("accommodationCardTemplate");
 
             bookmarks.forEach(thisAccomID => {
+
                 console.log(thisAccomID);
                 db.collection("accommodations").where("code", "==", thisAccomID).get().then(snap => {
+
                     size = snap.size;
                     queryData = snap.docs;
 
                     if (size == 1) {
+
                         var doc = queryData[0].data();
                         var title = doc.name; // gets the name fiels
                         var details = doc.details; // get the details
@@ -38,8 +43,11 @@ function getBookmarks(user) {
 
                         accommodationCardGroup.appendChild(newcard);
                         // document.getElementById(collection + "-go-here").appendChild(newcard);
+
                     } else {
+
                         console.log("Query has more than one data")
+
                     }
 
                 })

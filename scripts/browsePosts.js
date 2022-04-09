@@ -68,7 +68,7 @@ function displayCards(collection) {
                 // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
                 // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
 
-                newcard.querySelector('.read-more').href = "eachAccommodation.html?title="+title +"&details=" + details;
+                newcard.querySelector('.read-more').href = "eachAccommodation.html?AccommodationTitle=" + title + "&details=" + details;
 
                 //attach to gallery
                 document.getElementById(collection + "-go-here").appendChild(newcard);
@@ -82,7 +82,7 @@ displayCards("accommodations");
 var currentUser;
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
-        currentUser = db.collection("users").doc(user.uid);   //global
+        currentUser = db.collection("users").doc(user.uid); //global
         console.log(currentUser);
 
         // the following functions are always called when someone is logged in

@@ -1,41 +1,51 @@
-
 /*-------------------------------------
  * customize material design icon sizes 
  *-------------------------------------
  */
 
-.material-icons.md-18 { font-size: 40px; }
-.material-icons.md-24 { font-size: 40px; }
-.material-icons.md-36 { font-size: 40px; }
-.material-icons.md-48 { font-size: 40px; }
+.material-icons.md-18 {
+    font-size: 40px;
+}
 
-.material-icons{
+.material-icons.md-24 {
+    font-size: 40px;
+}
+
+.material-icons.md-36 {
+    font-size: 40px;
+}
+
+.material-icons.md-48 {
+    font-size: 40px;
+}
+
+.material-icons {
     cursor: pointer;
 }
 
-.indexHeading{
+.indexHeading {
     margin-top: 30%;
     margin-bottom: 5%;
 }
 
-#indexBody{
+#indexBody {
     margin-top: 5%;
     margin-bottom: 10%;
 }
 
-#indexContent1{
+#indexContent1 {
     margin-left: 20%;
 }
 
-#indexContent2{
+#indexContent2 {
     margin-left: 28%;
     margin-bottom: 15%;
 }
 
-#pageImage{
+#pageImage {
     float: right;
     height: auto;
-    width:auto;
+    width: auto;
 }
 
 /* #loginPageImage{
@@ -45,28 +55,29 @@
     margin-right: 5%;
 } */
 
-#loginPageHeading{
+#loginPageHeading {
     margin-top: 1%;
 }
 
-#loginText{
+#loginText {
     margin-top: 10%;
 }
-#loginBody{
+
+#loginBody {
     margin-bottom: 10%;
 }
 
-.buttons{
+.buttons {
     text-align: center;
     margin-bottom: 3%;
 }
 
-#ChooseText{
+#ChooseText {
     margin-left: 25%;
     margin-bottom: 2%;
 }
 
-#chooseImg{
+#chooseImg {
     margin-top: 5%;
     margin-left: 32%;
     margin-bottom: 2%;
